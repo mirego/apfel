@@ -42,12 +42,12 @@ module Apfel
     end
 
     def cleaned_content
-      content.gsub(/;\s*$/, "")
+      content.gsub(/;[^;]*$/, "") # remove everything after the last semicolon
     end
 
     def valid?
       if key_value_pair?
-        !!(/;[\s]*$/.match(content))
+        !!(/;[^;]*$/.match(content)) # line ends with a semicolon
       else
         true
       end

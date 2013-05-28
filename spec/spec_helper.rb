@@ -10,7 +10,7 @@ end
 def valid_file(encoding='ascii')
   create_temp_file(encoding, <<-EOS
 /* This is the first comment */
-"key_number_one" = "value number one";
+"key_number_one" = "value number one"; // simple inline comment
 
 /* This is
 a
@@ -18,7 +18,7 @@ a
 multiline comment */
 "key_number_two"   =   "value number two";
 /* This is comment number 3 */
-"key_number_three" = " value number three ";
+"key_number_three" = " value number three "; /* another inline comment */
   EOS
   )
 end
