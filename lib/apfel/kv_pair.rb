@@ -12,7 +12,7 @@ module Apfel
     end
 
     def value
-     line.value.strip unless line.key.nil?
+     line.value.strip unless line.value.nil?
     end
 
     def comment

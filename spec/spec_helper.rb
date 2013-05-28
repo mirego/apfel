@@ -18,7 +18,7 @@ a
 multiline comment */
 "key_number_two"   =   "value number two";
 /* This is comment number 3 */
-"key_number_three" = " value number three "; /* another inline comment */
+"key_number_three" = " value number three ";
   EOS
   )
 end
