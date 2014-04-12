@@ -23,7 +23,7 @@ module Apfel
         parsed_file.values.should eq(
         ["value number one",
          "value number two",
-         "value number three"]
+         " value number three "]
         )
       end
     end
@@ -60,7 +60,7 @@ module Apfel
           [
             {"key_number_one" => "value number one"},
             {"key_number_two" => "value number two"},
-            {"key_number_three" => "value number three"}
+            {"key_number_three" => " value number three "}
           ]
           )
       end
@@ -72,7 +72,7 @@ module Apfel
         {
           "key_number_one" => { "value number one" => "This is the first comment" },
           "key_number_two" => { "value number two" => "This is a multiline comment" },
-          "key_number_three" => { "value number three" => "This is comment number 3" }
+          "key_number_three" => { " value number three " => "This is comment number 3" }
         }
       )
       end
@@ -83,7 +83,7 @@ module Apfel
             {
               "key_number_one" => "value number one",
               "key_number_two" => "value number two",
-              "key_number_three" => "value number three"
+              "key_number_three" => " value number three "
             }
           )
         end
@@ -96,7 +96,7 @@ module Apfel
         {
           "key_number_one" => { "value number one" => "This is the first comment" },
           "key_number_two" => { "value number two" => "This is a multiline comment" },
-          "key_number_three" => { "value number three" => "This is comment number 3" }
+          "key_number_three" => { " value number three " => "This is comment number 3" }
         }.to_json
         )
       end
@@ -106,7 +106,7 @@ module Apfel
             {
               "key_number_one" => "value number one",
               "key_number_two" => "value number two",
-              "key_number_three" => "value number three"
+              "key_number_three" => " value number three "
             }.to_json
           )
         end

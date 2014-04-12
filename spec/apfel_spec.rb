@@ -23,7 +23,7 @@ describe Apfel do
       it 'should have the correct values' do
         parsed_file.values.should include 'value number one'
         parsed_file.values.should include 'value number two'
-        parsed_file.values.should include 'value number three'
+        parsed_file.values.should include ' value number three '
       end
 
       describe 'should have the correct comments' do
