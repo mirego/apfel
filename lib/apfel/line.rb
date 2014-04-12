@@ -30,7 +30,7 @@ module Apfel
     end
 
     def close_comment
-      /^(.+)\*\/\s*$/.match(content).to_s
+      /^(.+)?\*\/\s*$/.match(content).to_s
     end
 
     def close_comment?
