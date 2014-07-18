@@ -184,5 +184,35 @@ multiline comment */
         end
       end
     end
+
+    context 'when given a UTF16 .strings file'do
+
+      let(:utf16_file) do
+        './spec/fixtures/utf16.strings'
+      end
+
+      it 'the file should be utf-16' do
+        # use unix file instead of File.open because
+        # File.open(file, 'r') <==> File.open(file, 'r:UTF-8')
+        file_info = `file  -I #{utf16_file}`
+        file_info.should include('charset=utf-16')
+      end
+
+      let(:parsed_file) do
+        Apfel.parse(utf16_file)
+      end
+
+      it 'returns a ParsedDotStrings object' do
+        parsed_file.should be_a(Apfel::ParsedDotStrings)
+      end
+
+      it 'should have the correct keys' do
+        parsed_file.keys[0].should == 'test'
+      end
+
+      it 'should have the correct values' do
+        parsed_file.values[0].should == 'utf16'
+      end
+    end
   end
 end
